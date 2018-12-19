@@ -109,6 +109,7 @@ body {
 
 .process-bar .node-wrapper .node {
   width: 27px;
+  height: 27px;
   border: 2px solid #fff;
   margin: 0;
   padding: 0;

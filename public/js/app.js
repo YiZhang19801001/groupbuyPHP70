@@ -61757,91 +61757,91 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 
 var ProductCard = function (_Component) {
-    _inherits(ProductCard, _Component);
+  _inherits(ProductCard, _Component);
 
-    function ProductCard(props) {
-        _classCallCheck(this, ProductCard);
+  function ProductCard(props) {
+    _classCallCheck(this, ProductCard);
 
-        var _this = _possibleConstructorReturn(this, (ProductCard.__proto__ || Object.getPrototypeOf(ProductCard)).call(this, props));
+    var _this = _possibleConstructorReturn(this, (ProductCard.__proto__ || Object.getPrototypeOf(ProductCard)).call(this, props));
 
-        var newMode = _this.props.product.choices.length === 0 && _this.props.product.options.length === 0 ? 1 : 2;
-        _this.state = {
-            product: _this.props.product,
-            quantity: _this.props.quantity,
-            mode: newMode,
-            showChoicePannel: false
-        };
+    var newMode = _this.props.product.choices.length === 0 && _this.props.product.options.length === 0 ? 1 : 2;
+    _this.state = {
+      product: _this.props.product,
+      quantity: _this.props.quantity,
+      mode: newMode,
+      showChoicePannel: false
+    };
 
-        _this.setChoicePannelStatus = _this.setChoicePannelStatus.bind(_this);
-        return _this;
+    _this.setChoicePannelStatus = _this.setChoicePannelStatus.bind(_this);
+    return _this;
+  }
+
+  _createClass(ProductCard, [{
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      // console.log(
+      //     `${this.state.product.name}`,
+      //     this.state.product.choices.length
+      // );
+      // console.log(`${this.state.product.name}`, newMode);
     }
+  }, {
+    key: "setChoicePannelStatus",
+    value: function setChoicePannelStatus(status) {
+      this.setState({ showChoicePannel: status });
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+        "div",
+        { className: "product-card" },
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "div",
+          { className: "img-wrapper" },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
+            src: "/groupbuy/public" + this.state.product.image,
+            alt: this.state.product.name
+          })
+        ),
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+          "div",
+          { className: "control" },
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+            "span",
+            { className: "text-information_title" },
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "span",
+              null,
+              this.state.product.name
+            ),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
+              "span",
+              null,
+              this.state.product.price
+            )
+          ),
+          __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__ControlPannel__["a" /* default */], {
+            product: this.state.product,
+            sold: this.state.product.sold,
+            updateShopCartList: this.props.updateShopCartList,
+            mode: this.state.mode,
+            quantity: this.props.quantity,
+            shoppingCartList: this.props.shoppingCartList,
+            setChoicePannelStatus: this.setChoicePannelStatus
+          }),
+          this.state.showChoicePannel ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__ChoicePannel__["a" /* default */], {
+            shoppingCartList: this.props.shoppingCartList,
+            updateShopCartList: this.props.updateShopCartList,
+            product: this.props.product,
+            setChoicePannelStatus: this.setChoicePannelStatus
+          }) : null
+        )
+      );
+    }
+  }]);
 
-    _createClass(ProductCard, [{
-        key: "componentDidMount",
-        value: function componentDidMount() {
-            // console.log(
-            //     `${this.state.product.name}`,
-            //     this.state.product.choices.length
-            // );
-            // console.log(`${this.state.product.name}`, newMode);
-        }
-    }, {
-        key: "setChoicePannelStatus",
-        value: function setChoicePannelStatus(status) {
-            this.setState({ showChoicePannel: status });
-        }
-    }, {
-        key: "render",
-        value: function render() {
-            return __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                "div",
-                { className: "product-card" },
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "img-wrapper" },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("img", {
-                        src: "/groupbuy/public/" + this.state.product.image,
-                        alt: this.state.product.name
-                    })
-                ),
-                __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                    "div",
-                    { className: "control" },
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                        "span",
-                        { className: "text-information_title" },
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "span",
-                            null,
-                            this.state.product.name
-                        ),
-                        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(
-                            "span",
-                            null,
-                            this.state.product.price
-                        )
-                    ),
-                    __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__ControlPannel__["a" /* default */], {
-                        product: this.state.product,
-                        sold: this.state.product.sold,
-                        updateShopCartList: this.props.updateShopCartList,
-                        mode: this.state.mode,
-                        quantity: this.props.quantity,
-                        shoppingCartList: this.props.shoppingCartList,
-                        setChoicePannelStatus: this.setChoicePannelStatus
-                    }),
-                    this.state.showChoicePannel ? __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__ChoicePannel__["a" /* default */], {
-                        shoppingCartList: this.props.shoppingCartList,
-                        updateShopCartList: this.props.updateShopCartList,
-                        product: this.props.product,
-                        setChoicePannelStatus: this.setChoicePannelStatus
-                    }) : null
-                )
-            );
-        }
-    }]);
-
-    return ProductCard;
+  return ProductCard;
 }(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]);
 
 /* harmony default export */ __webpack_exports__["a"] = (ProductCard);
